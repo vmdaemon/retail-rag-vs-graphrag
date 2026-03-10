@@ -1,0 +1,21 @@
+venv/
+__pycache__/
+*.pyc
+.DS_Store
+
+# Local vector DB artifacts
+chroma/
+
+# Generated reports/artifacts
+bi_report_*.txt
+
+# Editor/IDE
+.vscode/
+.idea/
+
+# Local backups
+.backup_*/
+
+# Env files
+.env
+.env.*

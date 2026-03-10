@@ -1,0 +1,104 @@
+{
+  "node_types": [
+    {
+      "type": "Supplier",
+      "count": 2,
+      "samples": [
+        "Isha Supplies",
+        "Acme Supplies"
+      ]
+    },
+    {
+      "type": "Product",
+      "count": 3,
+      "samples": [
+        "Organic Coffee",
+        "Dark Roast Coffee",
+        "Green Tea"
+      ]
+    },
+    {
+      "type": "Promotion",
+      "count": 2,
+      "samples": [
+        "10% Off Coffee",
+        "Tea Lovers Discount"
+      ]
+    },
+    {
+      "type": "Store",
+      "count": 2,
+      "samples": [
+        "Downtown Store",
+        "Uptown Store"
+      ]
+    },
+    {
+      "type": "Region",
+      "count": 2,
+      "samples": [
+        "Northeast",
+        "Midwest"
+      ]
+    }
+  ],
+  "relationship_types": [
+    {
+      "type": "PROVIDES",
+      "pattern": "(Supplier)-[:PROVIDES]->(Product)",
+      "count": 3
+    },
+    {
+      "type": "IN_PROMOTION",
+      "pattern": "(Product)-[:IN_PROMOTION]->(Promotion)",
+      "count": 2
+    },
+    {
+      "type": "ACTIVE_IN",
+      "pattern": "(Promotion)-[:ACTIVE_IN]->(Store)",
+      "count": 4
+    },
+    {
+      "type": "LOCATED_IN",
+      "pattern": "(Store)-[:LOCATED_IN]->(Region)",
+      "count": 4
+    }
+  ],
+  "sample_data": {
+    "complete_chains": [
+      {
+        "supplier": "Isha Supplies",
+        "product": "Organic Coffee",
+        "promotion": "10% Off Coffee",
+        "store": "Downtown Store",
+        "region": "Northeast"
+      },
+      {
+        "supplier": "Isha Supplies",
+        "product": "Organic Coffee",
+        "promotion": "10% Off Coffee",
+        "store": "Downtown Store",
+        "region": "Midwest"
+      },
+      {
+        "supplier": "Isha Supplies",
+        "product": "Organic Coffee",
+        "promotion": "10% Off Coffee",
+        "store": "Uptown Store",
+        "region": "Northeast"
+      }
+    ]
+  },
+  "graph_patterns": [
+    {
+      "pattern": "Complete Supply Chain",
+      "description": "Supplier \u2192 Product \u2192 Promotion \u2192 Store \u2192 Region",
+      "count": 8
+    }
+  ],
+  "statistics": {
+    "total_nodes": 31,
+    "total_relationships": 23,
+    "density": 0.7419354838709677
+  }
+}
